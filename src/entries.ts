@@ -33,7 +33,6 @@ export default function getEntries(
     const { glob, cwd } = getGlobAndCwd(entry);
     const files:string = sync(include || glob, {
       absolute: true,
-      matchBase: true,
       cwd: entry,
       ignore: exclude,
       onlyFiles: true,
