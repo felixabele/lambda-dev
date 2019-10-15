@@ -38,7 +38,8 @@ export async function createServer({
   const app = createExpressApp();
   app.use(bodyParser.raw());
   app.use(bodyParser.text({ type: "*/*" }));
-  app.use(bodyParser.json({ limit: '1mb' }));
+  app.use(bodyParser.json({ limit: '50mb' }));
+  app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
   const path = getPath(basePath);
 
