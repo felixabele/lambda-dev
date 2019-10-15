@@ -31,9 +31,9 @@ export default function getEntries(
 ): Entry[] | undefined {
   try {
     const { glob, cwd } = getGlobAndCwd(entry);
-    const files = sync(include || glob, {
+    const files = sync<string>(include || glob, {
       absolute: true,
-      baseNameMatch: true,
+      matchBase: true,
       cwd: entry,
       ignore: exclude,
       onlyFiles: true,
