@@ -21,7 +21,8 @@
     "pretest": "rimraf test/tmp",
     "test": "jest",
     "build": "rollup -c",
-    "version": "standard-version --no-verify"
+    "version": "standard-version --no-verify",
+    "prepare": "npm run build"
   },
   "lint-staged": {
     "*.{ts}": "npm run lint"
