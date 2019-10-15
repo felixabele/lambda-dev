@@ -31,7 +31,7 @@ export default function getEntries(
 ): Entry[] | undefined {
   try {
     const { glob, cwd } = getGlobAndCwd(entry);
-    const files:string = sync(include || glob, {
+    const files:string[] = sync(include || glob, {
       absolute: true,
       cwd: entry,
       ignore: exclude,
