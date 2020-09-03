@@ -110,12 +110,7 @@ export default async function serve({
     webpackConfig: customConfig
   });
 
-  return app.listen(port, (err: Error) => {
-    if (err) {
-      console.error(`${prefix} ${chalk.red("Serve error:")}`, err);
-      throw err;
-    } else {
-      console.log(`${prefix} Serving...`);
-    }
+  return app.listen(port, () => {
+    console.log(`${prefix} Serving...`);
   });
 }
